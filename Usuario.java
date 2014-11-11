@@ -11,7 +11,7 @@ import java.io.Serializable;
  *
  * @author henrique
  */
-public class Usuario implements Serializable
+public class Usuario implements Serializable, Comparable
 {
     
     private int id;
@@ -28,5 +28,11 @@ public class Usuario implements Serializable
         this.state = state;
         this.country = country;
     }
+
+	@Override
+	public int compareTo(Object arg0) {
+		Usuario usuario = (Usuario) arg0;
+		return this.country.compareTo(usuario.country);
+	}
     
 }
